@@ -26,8 +26,8 @@ app.get("/", (req, res) => {
   res.status(200).json({ message: "hello world from sever" });
 });
 
-const port = 8000;
-const host = "localhost";
+const port = process.env.PORT || 8000;
+const host = process.env.HOST || "localhost";
 
 app.listen(port, host, () => {
   console.log(`server is listening on http://${host}:${port}`);
